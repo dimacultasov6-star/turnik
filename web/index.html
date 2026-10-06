@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="mobile-web-app-capable" content="yes" />
+<title>Турник</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="hud">
+  <div class="pill" id="score">0</div>
+  <div class="pill small" id="best">Рекорд: 0</div>
+  <div class="pill combo" id="combo"></div>
+</div>
+
+<div id="hint"></div>
+
+<div id="controls">
+  <div class="group left">
+    <button class="btn round" id="btnL" data-k="twistL">&#8634;</button>
+    <button class="btn round" id="btnR" data-k="twistR">&#8635;</button>
+  </div>
+  <div class="group right">
+    <button class="btn wide" id="btnRel">ОТПУСТИ</button>
+    <button class="btn wide primary" id="btnPull" data-k="pull">ТЯНИ</button>
+  </div>
+</div>
+
+<div id="overlay">
+  <div class="panel">
+    <h1>ТУРНИК</h1>
+    <p class="sub">Физика, сальто и точный захват</p>
+    <ul>
+      <li><b>ТЯНИ</b> — раскачайся на перекладине. В воздухе поджимает ноги: сальто крутится быстрее</li>
+      <li><b>ОТПУСТИ</b> — отпусти перекладину и полети к следующей</li>
+      <li><b>&#8634; &#8635;</b> — докрути или замедли вращение, чтобы приземлиться на ноги</li>
+    </ul>
+    <p class="sub">Лови турник в полёте и приземляйся чисто — так набираешь комбо</p>
+    <p class="sub" id="menuBest">Рекорд: 0</p>
+    <button id="btnStart">ИГРАТЬ</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
