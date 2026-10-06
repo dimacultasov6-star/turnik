@@ -53,6 +53,7 @@
   var floats = [];
   var parts = [];
   var clouds = [];
+  var camInit = false;
 
   for (var ci = 0; ci < 40; ci++) {
     clouds.push({
@@ -441,10 +442,15 @@
 
     var camTarget = P.x - visW * 0.38;
     if (camTarget < -70) camTarget = -70;
-    camX += (camTarget - camX) * 0.12;
-
     var camYTarget = Math.min(baseCamY, P.y - visH * 0.4);
-    camY += (camYTarget - camY) * 0.1;
+    if (!camInit) {
+      camX = camTarget;
+      camY = camYTarget;
+      camInit = true;
+    } else {
+      camX += (camTarget - camX) * 0.12;
+      camY += (camYTarget - camY) * 0.1;
+    }
 
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
